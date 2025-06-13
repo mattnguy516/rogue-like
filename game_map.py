@@ -10,10 +10,8 @@ class GameMap:
         We create a 2D array, filled with the same values, which in this case,
         is the tile_types.floor. This will fill self.tiles with floor tiles
         """
-        self.tiles = np.full((width, height), fill_value = tile_types.floor, order = "F")
+        self.tiles = np.full((width, height), fill_value = tile_types.wall, order = "F")
         
-        # Creates a small, three tile wise wall at specific location.
-        self.tiles[30:33, 22] = tile_types.wall
         
     # To ensure the player doesn't move out of bounds
     def in_bounds(self, x: int, y: int) -> bool:
